@@ -16,7 +16,7 @@ int main(){
   {
    //もしpcから通信が来たら
    if(pc.readable()){
-   int n = pc.read(buf, sizeof(buf) - 1);//-1のサイズ空け
+   int n = pc.read(buf, sizeof(buf) - 1);//サイズ空け
    if (n > 0)  
     {
     buf[n] = '\0'; //ヌル文字
@@ -48,3 +48,4 @@ int main(){
     can.write(msg); //特に理由がない限りwhile直下
  }
 }
+
