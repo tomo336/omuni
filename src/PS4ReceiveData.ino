@@ -23,7 +23,7 @@ void loop()
     {
     int8_t coord2 = PS4.LStickY();
     String str2 = String(static_cast<int>(coord2));
-    Serial.println(str);
+    Serial.println(str2);
     }
 
     delay(1000); //1秒停止
