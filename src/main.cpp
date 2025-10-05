@@ -42,14 +42,15 @@ int main()
     float value = hypot(X, Y);
 
     // オムニホイールの出力
-    pwm[0] = sin((rad - M_PI / 4) * value);
-    pwm[1] = sin((rad - 3 * M_PI / 4) * value);
-    pwm[2] = sin((rad + 3 * M_PI / 4) * value);
-    pwm[3] = sin((rad + M_PI / 4) * value);
+    pwm[0] = sin(rad - M_PI / 4) * value;
+    pwm[1] = sin(rad - 3 * M_PI / 4) * value;
+    pwm[2] = sin(rad + 3 * M_PI / 4) * value;
+    pwm[3] = sin(rad + M_PI / 4) * value;
 
     // CAN通信
     CANMessage msg(2, (const uint8_t *)pwm, 8); // 特に理由がない限りwhile直下
     can.write(msg);                             // 特に理由がない限りwhile直下
   }
 }
+
 
