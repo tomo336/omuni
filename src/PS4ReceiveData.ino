@@ -15,7 +15,7 @@ void loop()
     if (PS4.LStickX()) 
     {
       int8_t coord1 = PS4.LStickX();
-      String str1 = String(static_cast<int>(coord1));
+      String str1 = String(static_cast<int>(coord1)+256);
       Serial.println(str1); //strに改行を付け加え、出力している
     }
 
